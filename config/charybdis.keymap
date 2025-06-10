@@ -47,7 +47,7 @@
 &kp TAB         &kp A   &lt 4 S  &kp D         &lt 3 F           &kp G        &kp H       &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LEFT_SHIFT  &kp Z   &kp X    &kp C         &kp V             &lt 2 B      &kp N       &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
                                  &kp LEFT_GUI  &kp LALT          &mo 1        &kp DELETE  &mo 2
-                                               &kp LEFT_CONTROL  &kp SPACE    &kp SPACE
+                                               &kp LEFT_CONTROL  &kp SPACE    &kp ENTER
             >;
         };
 
