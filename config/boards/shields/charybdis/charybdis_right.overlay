@@ -106,6 +106,10 @@
 
 
 / {
+   sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&trackball>;
+    };
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
