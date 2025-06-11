@@ -111,7 +111,6 @@
     trackball_volume_input_listener: trackball_volume_input_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        layers = <5>;
         
         evt-type = <INPUT_EV_REL>;
         y-input-code = <INPUT_REL_WHEEL>;
