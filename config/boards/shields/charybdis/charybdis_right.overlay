@@ -5,6 +5,7 @@
  */
  
 #include "charybdis.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -55,8 +56,11 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <3 5>;
+        scroll-layers = <3>;
         snipe-layers = <4>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
       // automouse-layer = <3>;
     };
 };
@@ -109,6 +113,27 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+    };
+
+    trackball_scroll_input_transform: trackball_scroll_input_transform {
+        compatible = "zmk,input-processor-transform";
+        #input-processor-cells = <0>;
+        x-scale = <0>;
+        y-scale = <(64)>;
+        type = <INPUT_PROC_TRANSFORM_TYPE_SCALE>;
+        track-remainders;
+    };
+
+    trackball_volume_input_listener: trackball_volume_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&trackball_scroll_input_transform>;
+        layers = <5>;
+        
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_WHEEL>;
+        y-input-code = <INPUT_REL_WHEEL>;
+        bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 };
 
