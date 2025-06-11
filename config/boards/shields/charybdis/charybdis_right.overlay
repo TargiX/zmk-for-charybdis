@@ -5,7 +5,6 @@
  */
  
 #include "charybdis.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/input/input-event-codes.h>
 
@@ -109,20 +108,9 @@
 
 
 / {
-    trackball_scroll_input_transform: trackball_scroll_input_transform {
-        compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <1>;
-        x-codes = <INPUT_REL_HWHEEL>;
-        y-codes = <INPUT_REL_WHEEL>;
-        x-scale = <0>;
-        y-scale = <64>;
-        track-remainders;
-    };
-
     trackball_volume_input_listener: trackball_volume_input_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&trackball_scroll_input_transform 1>;
         layers = <5>;
         
         evt-type = <INPUT_EV_REL>;
