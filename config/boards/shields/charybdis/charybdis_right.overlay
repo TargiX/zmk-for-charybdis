@@ -108,12 +108,6 @@
 
 
 / {
-    trackball_volume_input_listener: trackball_volume_input_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        
-        bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-    };
 };
 
 
