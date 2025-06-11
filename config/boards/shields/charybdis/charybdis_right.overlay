@@ -114,14 +114,15 @@
         #input-processor-cells = <1>;
         x-codes = <INPUT_REL_HWHEEL>;
         y-codes = <INPUT_REL_WHEEL>;
-        scale = <64>;
+        x-scale = <0>;
+        y-scale = <64>;
         track-remainders;
     };
 
     trackball_volume_input_listener: trackball_volume_input_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&trackball_scroll_input_transform>;
+        input-processors = <&trackball_scroll_input_transform 1>;
         layers = <5>;
         
         evt-type = <INPUT_EV_REL>;
