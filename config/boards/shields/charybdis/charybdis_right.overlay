@@ -111,7 +111,7 @@
 / {
     trackball_scroll_input_transform: trackball_scroll_input_transform {
         compatible = "zmk,input-processor-transform";
-        #input-processor-cells = <0>;
+        #input-processor-cells = <1>;
         x-codes = <INPUT_REL_HWHEEL>;
         y-codes = <INPUT_REL_WHEEL>;
         scale = <64>;
