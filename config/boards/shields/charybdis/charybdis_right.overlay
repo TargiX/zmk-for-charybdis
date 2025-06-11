@@ -113,7 +113,6 @@
         compatible = "zmk,input-processor-transform";
         #input-processor-cells = <0>;
         scale = <64>;
-        type = <INPUT_PROC_TRANSFORM_TYPE_SCALE>;
         track-remainders;
     };
 
