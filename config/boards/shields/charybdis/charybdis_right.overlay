@@ -112,8 +112,6 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
         
-        evt-type = <INPUT_EV_REL>;
-        y-input-code = <INPUT_REL_WHEEL>;
         bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 };
