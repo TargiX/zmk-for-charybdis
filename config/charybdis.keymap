@@ -79,8 +79,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+                        &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_DN    &trans  &trans
+                                &kp C_VOL_UP  &kp C_VOL_DN    &trans
             >;
         };
 
