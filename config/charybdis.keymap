@@ -42,12 +42,12 @@
 
         QWERTY {
             bindings = <
-&kp GRAVE       &kp N1  &kp N2   &kp N3        &kp N4            &kp N5       &kp N6      &kp N7  &kp N8     &kp N9   &kp N0    &kp LEFT_BRACKET
-&kp ESC         &kp Q   &kp W    &kp E         &kp R             &kp T        &kp Y       &kp U   &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp TAB         &kp A   &kp S  &kp D           &kp F             &kp G        &kp H       &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z   &kp X    &kp C         &lt 5 V           &lt 4 B      &kp N       &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
-                                 &kp LEFT_GUI  &kp LALT          &mo 1        &kp LEFT_GUI  &mo 2
-                                               &kp LEFT_CONTROL  &kp SPACE    &kp ENTER
+&kp GRAVE       &kp N1  &kp N2  &kp N3        &kp N4            &kp N5       &kp N6        &kp N7  &kp N8     &kp N9   &kp N0    &kp LEFT_BRACKET
+&kp ESC         &kp Q   &kp W   &kp E         &kp R             &kp T        &kp Y         &kp U   &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp TAB         &kp A   &kp S   &kp D         &kp F             &kp G        &kp H         &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z   &kp X   &kp C         &lt 5 V           &lt 4 B      &kp N         &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                                &kp LEFT_GUI  &kp LALT          &mo 1        &kp LEFT_GUI  &mo 2
+                                              &kp LEFT_CONTROL  &kp SPACE    &kp ENTER
             >;
         };
 
@@ -56,7 +56,7 @@
 &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6              &kp F7             &kp F8          &kp F9          &kp F10          &kp F11    &kp F12
 &trans     &none      &none      &none     &none           &trans              &mkp MB2           &mkp LCLK       &kp UP_ARROW    &mkp RCLK        &kp MINUS  &kp EQUAL
 &kp TAB    &none      &none      &none     &none           &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RIGHT  &trans
-&kp LSHFT  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mkp LCLK       &mkp MB3        &mkp RCLK        &none      &trans
+&kp LSHFT  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mkp LCLK       &mkp MB3        &mkp RCLK        &kp PIPE   &trans
                                  &trans    &trans          &To0_macro          &mkp LCLK          &mkp RCLK
                                            &trans          &trans              &trans
             >;
@@ -75,12 +75,12 @@
 
         scroll-layers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_DN    &trans  &trans
-                                &kp C_VOL_UP  &kp C_VOL_DN    &trans
+&trans  &trans  &trans  &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans        &trans        &trans          &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
+&trans  &trans  &trans  &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans  &trans
+                        &kp C_VOL_UP  &kp C_VOL_DN  &kp C_VOL_DN    &trans        &trans
+                                      &kp C_VOL_UP  &kp C_VOL_DN    &trans
             >;
         };
 
@@ -88,18 +88,19 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK &mkp LCLK  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans   &mkp RCLK &mkp LCLK  
+                        &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
                                 &trans  &trans    &trans
             >;
         };
-          volume-layer {
+
+        volume-layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
                         &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
                                 &trans  &trans    &trans
             >;
