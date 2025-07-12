@@ -88,9 +88,9 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
+&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK &mkp LCLK &kp C_VOL_UP  &kp C_VOL_DN   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK &mkp LCLK    &kp C_VOL_UP  &kp C_VOL_DN   &trans  &trans
+                        &trans  &trans  &trans   &mkp RCLK &mkp LCLK  
                                 &trans  &trans    &trans
             >;
         };
@@ -100,7 +100,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN   &trans  &trans
                         &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
                                 &trans  &trans    &trans
             >;
