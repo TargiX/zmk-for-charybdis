@@ -55,7 +55,7 @@
             bindings = <
 &kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6              &kp F7             &kp F8          &kp F9          &kp F10          &kp F11    &kp F12
 &trans     &none      &none      &none     &none           &trans              &mkp MB2           &mkp LCLK       &kp UP_ARROW    &mkp RCLK        &kp MINUS  &kp EQUAL
-&kp TAB    &none      &none      &none     &none           &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RIGHT  &trans
+&kp TAB    &none      &none      &none     &kp BACKSLASH   &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RIGHT  &trans
 &kp LSHFT  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mkp LCLK       &mkp MB3        &mkp RCLK        &kp PIPE   &trans
                                  &trans    &trans          &To0_macro          &mkp LCLK          &mkp RCLK
                                            &trans          &trans              &trans
@@ -86,24 +86,24 @@
 
         snipe-layers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &mkp RCLK &mkp LCLK &kp C_VOL_UP  &kp C_VOL_DN   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK &mkp LCLK    &mkp RCLK  &kp C_VOL_DN   &kp C_VOL_UP  &kp C_VOL_DN
-                        &trans  &trans  &trans   &mkp RCLK &mkp LCLK  
-                                &trans  &trans    &trans
-            >;
-        };
-         volume-layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &mkp RCLK     &kp C_VOL_DN  &kp C_VOL_UP  &kp C_VOL_DN
                         &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
                                 &trans  &trans    &trans
             >;
         };
-        
+
+        volume-layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans        &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &mkp LCLK  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans
+                        &trans  &trans  &trans    &mkp RCLK  &mkp LCLK
+                                &trans  &trans    &trans
+            >;
+        };
     };
 };
