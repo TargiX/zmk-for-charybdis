@@ -119,17 +119,8 @@
 
         scroller {
             layers = <3 5>;
-            /*
-             * Old driver SCROLL mode behavior:
-             * - no divisor (full resolution)
-             * - emit wheel/hwheel only when abs(delta) > SCROLL_TICK (20)
-             * Approximate SCROLL_TICK by scaling XY by 1/20 before mapping to scroll.
-             * Old driver also inverted both scroll directions (see PMW3610_SCROLL_* constants),
-             * so we invert X/Y again here before mapping to wheel events.
-             */
+            process-next;
             input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
-                &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
                 &zip_xy_scaler 1 20
                 &zip_xy_to_scroll_mapper
             >;
@@ -138,7 +129,7 @@
         sniper {
             layers = <4>;
             process-next;
-            input-processors = <&zip_xy_scaler 8 15>;
+            input-processors = <&zip_xy_scaler 7 15>;
         };
     };
 };
