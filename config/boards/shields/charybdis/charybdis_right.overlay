@@ -138,7 +138,7 @@
         sniper {
             layers = <4>;
             process-next;
-            input-processors = <&zip_xy_scaler 2 3>;
+            input-processors = <&zip_xy_scaler 8 15>;
         };
     };
 };
