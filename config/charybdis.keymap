@@ -53,11 +53,11 @@
 
         F_layers {
             bindings = <
-&kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6              &kp F7             &kp F8          &kp F9          &kp F10          &kp F11    &kp F12
-&trans     &none      &none      &none     &none           &trans              &mkp MB2           &mkp LCLK       &kp UP_ARROW    &mkp RCLK        &kp MINUS  &kp EQUAL
-&kp TAB    &none      &none      &none     &kp BACKSLASH   &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp RIGHT  &trans
-&kp LSHFT  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &mkp LCLK       &mkp MB3        &mkp RCLK        &kp PIPE   &trans
-                                 &trans    &trans          &To0_macro          &mkp LCLK          &mkp RCLK
+&kp F1     &kp F2     &kp F3     &kp F4    &kp F5          &kp F6              &kp F7             &kp F8        &kp F9        &kp F10       &kp F11    &kp F12
+&trans     &none      &none      &none     &none           &trans              &mkp MB2           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &kp EQUAL
+&kp TAB    &none      &none      &none     &kp BACKSLASH   &kp LEFT_BRACE      &kp RIGHT_BRACE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp RIGHT  &trans
+&kp LSHFT  &kp EQUAL  &kp MINUS  &kp PLUS  &kp LEFT_BRACE  &kp LEFT_BRACKET    &kp RIGHT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PIPE   &trans
+                                 &trans    &trans          &To0_macro          &mkp LCLK          &kp NUMBER_0
                                            &trans          &trans              &trans
             >;
         };
