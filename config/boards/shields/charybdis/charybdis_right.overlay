@@ -7,6 +7,7 @@
 #include "charybdis.dtsi"
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -60,7 +61,6 @@
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
         res-cpi = <1200>;
-        invert-x;
         smart-mode;
     };
 };
@@ -118,12 +118,33 @@
 
         scroller {
             layers = <3 5>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            /*
+             * Old driver SCROLL mode behavior:
+             * - no divisor (full resolution)
+             * - emit wheel/hwheel only when abs(delta) > SCROLL_TICK (20)
+             * Approximate SCROLL_TICK by scaling XY by 1/20 before mapping to scroll.
+             * Old driver also inverted both scroll directions (see PMW3610_SCROLL_* constants),
+             * so we invert X/Y again here before mapping to wheel events.
+             */
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                &zip_xy_scaler 1 20
+                &zip_xy_to_scroll_mapper
+            >;
         };
 
         sniper {
             layers = <4>;
-            input-processors = <&zip_xy_scaler 1 4>;
+            /*
+             * Old driver SNIPE mode:
+             * - SNIPE_CPI=200, divisor=1
+             * With res-cpi=1200, equivalent scale is 200/1200 = 1/6.
+             */
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                &zip_xy_scaler 1 6
+            >;
         };
     };
 };
