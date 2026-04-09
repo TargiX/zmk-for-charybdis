@@ -61,6 +61,7 @@
         zephyr,axis-x = <INPUT_REL_X>;
         zephyr,axis-y = <INPUT_REL_Y>;
         res-cpi = <1200>;
+        force-awake;
     };
 };
 
@@ -132,4 +133,3 @@
         };
     };
 };
-
