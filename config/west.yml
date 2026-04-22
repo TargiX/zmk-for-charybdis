@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 24487bd9744f504724089f0e1cec98431a2d3333  # pinned: firmware(25) working build, Jan 14 2026
       import: app/west.yml
   self:
     path: config
