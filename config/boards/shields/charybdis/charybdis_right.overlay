@@ -56,7 +56,7 @@
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
-        spi-max-frequency = <2000000>;
+        spi-max-frequency = <1000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <1200>;
         evt-type = <INPUT_EV_REL>;
@@ -119,6 +119,11 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        // Global filter to stop phantom jitter
+        default {
+            input-processors = <&zip_xy_deadzone 1>;
+        };
 
         scroller {
             layers = <3 5>;
