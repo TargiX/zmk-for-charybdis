@@ -120,11 +120,6 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        // Global filter to stop phantom jitter
-        default {
-            input-processors = <&zip_xy_deadzone 1>;
-        };
-
         scroller {
             layers = <3 5>;
             process-next;
@@ -141,4 +136,3 @@
         };
     };
 };
-
