@@ -2,15 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: badjeff
-      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: 24487bd9744f504724089f0e1cec98431a2d3333  # pinned: firmware(25) working build, Jan 14 2026
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
   self:
     path: config
