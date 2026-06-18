@@ -13,6 +13,6 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: TargiX
-      revision: 0b17d2cde11ae83e06c188f2546761fc123181cf
+      revision: b8f3c2b00f983d6a61718cde50f5238c5f795c40
   self:
     path: config
