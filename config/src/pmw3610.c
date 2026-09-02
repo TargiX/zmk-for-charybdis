@@ -455,7 +455,8 @@ static int pmw3610_report_data(const struct device *dev) {
         data->drop_motion_bursts--;
         data->dx = 0;
         data->dy = 0;
-        LOG_DBG("Dropped PMW3610 wake burst, %d remaining", data->drop_motion_bursts);
+        LOG_HEXDUMP_INF(buf, PMW3610_BURST_SIZE, "PMW3610 dropped wake burst (raw):");
+        LOG_INF("PMW3610 wake drop counter: %d remaining", data->drop_motion_bursts);
         return input_report(dev, config->evt_type, config->x_input_code, 0, true, K_NO_WAIT);
     }
 
@@ -472,6 +473,7 @@ static int pmw3610_report_data(const struct device *dev) {
     // Validate the motion bit: bursts flagged without real motion carry
     // garbage deltas. Drop them instead of moving the cursor.
     if ((buf[PMW3610_MOTION_POS] & PMW3610_MOTION_STATUS_MOTION) == 0) {
+        LOG_HEXDUMP_INF(buf, PMW3610_BURST_SIZE, "PMW3610 burst w/o motion bit (raw):");
         return 0;
     }
 
@@ -488,7 +490,8 @@ static int pmw3610_report_data(const struct device *dev) {
         x < -CONFIG_PMW3610_ALT_MOTION_DELTA_MAX ||
         y > CONFIG_PMW3610_ALT_MOTION_DELTA_MAX ||
         y < -CONFIG_PMW3610_ALT_MOTION_DELTA_MAX) {
-        LOG_WRN("Discarding PMW3610 motion spike x/y: %d/%d", x, y);
+        LOG_WRN("PMW3610 spike discarded x/y: %d/%d", x, y);
+        LOG_HEXDUMP_INF(buf, PMW3610_BURST_SIZE, "PMW3610 spike burst (raw):");
         data->dx = 0;
         data->dy = 0;
         return 0;
@@ -750,6 +753,10 @@ static int on_activity_state(const zmk_event_t *eh) {
     }
 
     bool enable = state_ev->state == ZMK_ACTIVITY_ACTIVE ? 1 : 0;
+    LOG_INF("PMW3610 activity state -> %s (perf %s)",
+            state_ev->state == ZMK_ACTIVITY_ACTIVE ? "active" :
+            state_ev->state == ZMK_ACTIVITY_IDLE ? "idle" : "sleep",
+            enable ? "on" : "off");
     for (size_t i = 0; i < ARRAY_SIZE(pmw3610_devs); i++) {
         pmw3610_set_performance(pmw3610_devs[i], enable);
     }
